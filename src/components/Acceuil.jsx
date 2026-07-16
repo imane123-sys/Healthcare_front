@@ -1,5 +1,5 @@
 import React from "react";
-import "..css/Acceuil.css";
+import "../css/Acceuil.css";
 
 export default function Acceuil() {
   return (

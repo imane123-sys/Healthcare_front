@@ -1,0 +1,977 @@
+/* Dashboard.css */
+
+.dashboard-root {
+  width: 1367px;
+  height: 1073px;
+  position: relative;
+}
+
+.dashboard-bg {
+  width: 1367px;
+  height: 1073px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: #FAF8FF;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  width: 256px;
+  height: 907px;
+  padding: 16px;
+  left: 21px;
+  top: 93px;
+  position: absolute;
+  background: #FAF8FF;
+  border-right: 1px #C3C6D7 solid;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.sidebar-spacer {
+  align-self: stretch;
+  height: 80px;
+  padding-bottom: 32px;
+}
+
+.sidebar-nav {
+  align-self: stretch;
+  flex: 1 1 0;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+  display: flex;
+}
+
+.nav-item {
+  align-self: stretch;
+  padding: 8px;
+  border-radius: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  display: inline-flex;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align: left;
+}
+
+.nav-item--active {
+  background: #D0E1FB;
+  border-left: 2px #004AC6 solid;
+}
+
+.nav-icon {
+  background: #434655;
+}
+
+.nav-item--active .nav-icon {
+  background: #54647A;
+}
+
+.nav-label {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #434655;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+}
+
+.nav-item--active .nav-label {
+  color: #54647A;
+}
+
+/* ---------- Top bar (search + add patient) ---------- */
+
+.search-bar {
+  width: 223px;
+  height: 32px;
+  padding: 0 8px;
+  left: 399px;
+  top: 85px;
+  position: absolute;
+}
+
+.btn-add-patient {
+  padding: 10px 24px;
+  left: 251px;
+  top: 137px;
+  position: absolute;
+  background: #004AC6;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add-patient-shadow {
+  width: 199.19px;
+  height: 48px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.10), 0px 4px 6px -1px rgba(0, 0, 0, 0.10);
+  border-radius: 12px;
+}
+
+.btn-add-patient-icon {
+  width: 14px;
+  height: 14px;
+  background: white;
+}
+
+.btn-add-patient-label {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+/* ---------- Stat cards row ---------- */
+
+.stats-row {
+  width: 952px;
+  left: 293px;
+  top: 133px;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+
+.stat-card {
+  flex: 1 1 0;
+  padding: 16px;
+  background: white;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  outline: 1px #C3C6D7 solid;
+  outline-offset: -1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.stat-card-top {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.stat-icon-badge {
+  padding: 8px;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.stat-icon {
+  background-color: currentColor;
+}
+
+.stat-trend {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  display: flex;
+}
+
+.stat-trend-value {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #16A34A;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+.stat-trend-icon {
+  width: 10px;
+  height: 6px;
+  background: #16A34A;
+}
+
+.stat-badge-text {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+.stat-label-wrap {
+  align-self: stretch;
+  padding-top: 8px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.stat-label {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+}
+
+.stat-value-wrap {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.stat-value {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 32px;
+  word-wrap: break-word;
+}
+
+/* ---------- Appointments overview chart card ---------- */
+
+.chart-card {
+  width: 629.33px;
+  padding: 24px;
+  left: 307px;
+  top: 317px;
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  outline: 1px #C3C6D7 solid;
+  outline-offset: -1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+
+.chart-header {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.chart-title-group {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.chart-title {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+.chart-subtitle {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+}
+
+.chart-filter {
+  padding: 8px 16px;
+  position: relative;
+  background: #FAF8FF;
+  border-radius: 8px;
+  outline: 1px #C3C6D7 solid;
+  outline-offset: -1px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+}
+
+.chart-filter-icon-wrap {
+  width: 128px;
+  height: 34px;
+  padding: 8px 9px 8px 101px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.chart-filter-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-filter-icon-shape {
+  width: 7.20px;
+  height: 3.60px;
+  left: 5.40px;
+  top: 7.20px;
+  position: absolute;
+  outline: 1.35px #6B7280 solid;
+  outline-offset: -0.67px;
+}
+
+.chart-filter-label {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+}
+
+.chart-months-row {
+  align-self: stretch;
+  padding-top: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+  display: inline-flex;
+}
+
+.chart-month {
+  width: 99.22px;
+  padding-top: 8px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: inline-flex;
+}
+
+.chart-month-label {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 12px;
+  word-wrap: break-word;
+}
+
+.chart-month-label--active {
+  color: #004AC6;
+  font-weight: 700;
+}
+
+/* ---------- Calendar card ---------- */
+
+.calendar-card {
+  width: 306.67px;
+  padding: 24px;
+  left: 966px;
+  top: 317px;
+  position: absolute;
+  background: #004AC6;
+  overflow: hidden;
+  border-radius: 12px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+
+.calendar-blur-circle {
+  width: 128px;
+  height: 128px;
+  left: 210.65px;
+  top: 124px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 9999px;
+}
+
+.calendar-header {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.calendar-title {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+.calendar-more-btn {
+  padding: 4px;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.calendar-more-icon {
+  width: 7.40px;
+  height: 12px;
+  background: white;
+}
+
+.calendar-grid {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 12px;
+}
+
+.calendar-day-label {
+  opacity: 0.60;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 12px;
+  word-wrap: break-word;
+}
+
+.calendar-date {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 12px;
+  word-wrap: break-word;
+}
+
+.calendar-date--active {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #004AC6;
+  font-weight: 700;
+  justify-self: center;
+}
+
+.calendar-date--icon {
+  width: 10.04px;
+  height: 8px;
+  background: white;
+  justify-self: center;
+}
+
+.calendar-next-appt {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.calendar-next-appt-label {
+  align-self: stretch;
+  opacity: 0.80;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 12px;
+  word-wrap: break-word;
+}
+
+.calendar-next-appt-value {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+}
+
+/* ---------- Shared card header (title + link/action) ---------- */
+
+.card-header-row {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.card-title {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+.card-link {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #004AC6;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- Latest patients table card ---------- */
+
+.patients-card {
+  width: 629.33px;
+  padding: 24px;
+  left: 307px;
+  top: 625px;
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  outline: 1px #C3C6D7 solid;
+  outline-offset: -1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+
+.patients-table {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.table-head-row {
+  align-self: stretch;
+  border-bottom: 1px #C3C6D7 solid;
+  justify-content: center;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.table-head-cell {
+  padding: 1px 1px 8px 1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.table-head-cell--name { width: 214.95px; }
+.table-head-cell--date { width: 182.36px; }
+.table-head-cell--status { width: 120.70px; }
+.table-head-cell--actions { width: 77.31px; }
+
+.table-head-label {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 12px;
+  word-wrap: break-word;
+}
+
+.table-body {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.table-row {
+  align-self: stretch;
+  border-bottom: 1px rgba(195, 198, 215, 0.50) solid;
+  justify-content: center;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.table-row--last {
+  border-bottom: none;
+}
+
+.table-cell-name {
+  width: 214.95px;
+  padding: 16px 1px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  padding: 7.50px 0 8.50px 0;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.avatar-initials {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 16px;
+  word-wrap: break-word;
+}
+
+.patient-name {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.table-cell-date {
+  width: 182.36px;
+  padding: 22px 1px 23px 1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.date-text {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.table-cell-status {
+  width: 120.70px;
+  padding: 23px 1px 22px 1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.status-badge {
+  padding: 0 8px;
+  border-radius: 9999px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.status-badge-text {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.table-cell-actions {
+  width: 77.31px;
+  padding: 18px 1px 23px 1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.actions-btn {
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.actions-icon {
+  width: 16px;
+  height: 4px;
+  background: #737686;
+}
+
+/* ---------- Recent appointments card ---------- */
+
+.appointments-card {
+  width: 307px;
+  height: 302px;
+  padding: 24px 24px 38px 24px;
+  left: 965px;
+  top: 633px;
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  outline: 1px #C3C6D7 solid;
+  outline-offset: -1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+
+.appointments-title-wrap {
+  align-self: stretch;
+  height: 28px;
+  position: relative;
+}
+
+.appointments-title {
+  left: 0;
+  top: 0;
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  word-wrap: break-word;
+}
+
+.appointments-list {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+
+.appointment-item {
+  align-self: stretch;
+  padding-bottom: 16px;
+  border-bottom: 1px rgba(195, 198, 215, 0.50) solid;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+
+.appointment-item--last {
+  border-bottom: none;
+}
+
+.appointment-date-box {
+  width: 40px;
+  height: 40px;
+  background: #E1E2ED;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.appointment-month {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 15px;
+  word-wrap: break-word;
+}
+
+.appointment-day {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+.appointment-info {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.appointment-type {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #191B23;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  word-wrap: break-word;
+}
+
+.appointment-meta {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #737686;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 12px;
+  word-wrap: break-word;
+}
+
+.appointment-status-icon--check {
+  width: 20px;
+  height: 20px;
+  background: #004AC6;
+}
+
+.appointment-status-icon--urgent {
+  width: 4px;
+  height: 18px;
+  background: #BA1A1A;
+}
+
+.appointment-status-icon--muted {
+  width: 20px;
+  height: 20px;
+  background: #737686;
+}
