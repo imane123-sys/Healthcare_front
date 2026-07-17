@@ -11,7 +11,7 @@ export default function Acceuil() {
             <div className="hero-blur-top" />
             <div className="hero-blur-bottom" />
 
-          <div className="hero-flex">
+            <div className="hero-flex">
               <div className="hero-left">
                 <div className="hero-heading-wrap">
                   <div className="hero-heading">
@@ -144,9 +144,7 @@ export default function Acceuil() {
                 </div>
                 <div className="module-title-wrap--tight">
                   <div className="module-title-wrap">
-                    <div className="module-title--sm">
-                      Gestion des médecins
-                    </div>
+                    <div className="module-title--sm">Gestion des médecins</div>
                   </div>
                   <div className="module-title-wrap">
                     <div className="module-desc">

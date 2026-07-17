@@ -1,11 +1,12 @@
 import React from "react";
-import "../css/TableauBoard.css";
+import "../css/TableauBord.css";
 
 export default function TableauBord() {
   return (
-    <div className="dashboard-root"> b 
+    <div className="dashboard-root">
+      {" "}
+      b
       <div className="dashboard-bg" />
-
       {/* ---------- Sidebar ---------- */}
       <div className="sidebar">
         <div className="sidebar-spacer" />
@@ -41,16 +42,13 @@ export default function TableauBord() {
           </button>
         </nav>
       </div>
-
       {/* ---------- Search + Add patient ---------- */}
       <div className="search-bar" />
-
       <button className="btn-add-patient">
         <div className="btn-add-patient-shadow" />
         <div className="btn-add-patient-icon" />
         <div className="btn-add-patient-label">Ajouter Patient</div>
       </button>
-
       {/* ---------- Stat cards ---------- */}
       <div className="stats-row">
         {/* Carte 1 : Total Patients */}
@@ -138,7 +136,6 @@ export default function TableauBord() {
           </div>
         </div>
       </div>
-
       {/* ---------- Appointments overview chart ---------- */}
       <div className="chart-card">
         <div className="chart-header">
@@ -182,7 +179,6 @@ export default function TableauBord() {
           </div>
         </div>
       </div>
-
       {/* ---------- Calendar ---------- */}
       <div className="calendar-card">
         <div className="calendar-blur-circle" />
@@ -237,7 +233,6 @@ export default function TableauBord() {
           </div>
         </div>
       </div>
-
       {/* ---------- Latest patients table ---------- */}
       <div className="patients-card">
         <div className="card-header-row">
@@ -277,7 +272,10 @@ export default function TableauBord() {
               </div>
               <div className="table-cell-status">
                 <div className="status-badge" style={{ background: "#DCFCE7" }}>
-                  <div className="status-badge-text" style={{ color: "#166534" }}>
+                  <div
+                    className="status-badge-text"
+                    style={{ color: "#166534" }}
+                  >
                     VÉRIFIÉ
                   </div>
                 </div>
@@ -304,7 +302,10 @@ export default function TableauBord() {
               </div>
               <div className="table-cell-status">
                 <div className="status-badge" style={{ background: "#FEF9C3" }}>
-                  <div className="status-badge-text" style={{ color: "#854D0E" }}>
+                  <div
+                    className="status-badge-text"
+                    style={{ color: "#854D0E" }}
+                  >
                     EN ATTENTE
                   </div>
                 </div>
@@ -331,7 +332,10 @@ export default function TableauBord() {
               </div>
               <div className="table-cell-status">
                 <div className="status-badge" style={{ background: "#DCFCE7" }}>
-                  <div className="status-badge-text" style={{ color: "#166534" }}>
+                  <div
+                    className="status-badge-text"
+                    style={{ color: "#166534" }}
+                  >
                     VÉRIFIÉ
                   </div>
                 </div>
@@ -345,7 +349,6 @@ export default function TableauBord() {
           </div>
         </div>
       </div>
-
       {/* ---------- Recent appointments ---------- */}
       <div className="appointments-card">
         <div className="appointments-title-wrap">
