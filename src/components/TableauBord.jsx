@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/TableauBoard.css";
+import "../css/TableauBord.css";
 
 export default function TableauBord() {
   return (
