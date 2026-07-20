@@ -14,4 +14,5 @@ connexion.interceptors.response.use(
     return Promise.reject({ status: error.response?.status, message });
   },
 );
+
 export default connexion;
