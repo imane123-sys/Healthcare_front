@@ -22,7 +22,7 @@ const Login = () => {
 
       loginUser(data);
 
-      navigate("/dashboard");
+      navigate("/tableauboard");
     } catch (err) {
       setError(err.response?.data?.message || "Identifiants incorrects");
     } finally {
@@ -64,8 +64,6 @@ const Login = () => {
               placeholder="••••••••"
             />
           </div>
-
-
 
           <button
             type="submit"
