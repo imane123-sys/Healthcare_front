@@ -50,7 +50,7 @@ export default function ModifierPatientForm() {
       .update(id, data)
       // .then((res) => {
       //   setPatient((prevPatients) =>
-      //     prevPatients.map((p) => (p.id === id ? res.data : p)),
+      //     prevPatients.map((p)  => (p.id === id ? res.data : p)),
       //   );
       // })
       .catch((err) => setErreur(err.message));
