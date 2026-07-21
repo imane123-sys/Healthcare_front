@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useLocation, useNavigate } from "react-router-dom";
+import { patientApi } from "../Api/Patient";
 
 const schema = yup.object({
   nom: yup.string().required("Le nom est obligatoire"),
@@ -17,7 +19,13 @@ const schema = yup.object({
   dateNaissance: yup.date().required("La date de naissance est obligatoire"),
 });
 
-export default function ModifierPatientForm({ patientById, ModifierPatient }) {
+export default function ModifierPatientForm() {
+  const location = useLocation();
+  const patient = location.state?.patient;
+  const navigate = useNavigate();
+  if (!patient) {
+    return <p>Aucun patient n'est trouvé</p>;
+  }
   const {
     register,
     handleSubmit,
@@ -28,13 +36,26 @@ export default function ModifierPatientForm({ patientById, ModifierPatient }) {
   });
 
   useEffect(() => {
-    if (patientById) {
-      reset(patientById);
+    if (patient) {
+      reset(patient);
     }
-  }, [patientById, reset]);
+  }, [patient, reset]);
 
   const onSubmit = (data) => {
-    ModifierPatient(patientById.id, data);
+    ModifierPatient(patient.id, data);
+  };
+
+  const ModifierPatient = (id, data) => {
+    patientApi
+      .update(id, data)
+      // .then((res) => {
+      //   setPatient((prevPatients) =>
+      //     prevPatients.map((p) => (p.id === id ? res.data : p)),
+      //   );
+      // })
+      .catch((err) => setErreur(err.message));
+    reset();
+    navigate("/patients");
   };
 
   return (
@@ -43,7 +64,7 @@ export default function ModifierPatientForm({ patientById, ModifierPatient }) {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>ID :</label>
-        <input type="number" value={patientById?.id || ""} readOnly />
+        <input type="number" value={patient?.id || ""} readOnly />
 
         <label>Nom :</label>
         <input type="text" {...register("nom")} />

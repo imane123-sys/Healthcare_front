@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ModifierPatientForm from "./ModifierPatient";
+import { Link, useNavigate } from "react-router-dom";
 
 const schema = yup.object({
   nom: yup.string().required("Le nom est obligatoire"),
@@ -76,19 +77,17 @@ export default function Patients() {
       })
       .catch((err) => setErreur(err.message));
   };
-  const ModifierPatient = (id, data) => {
-    patientApi
-      .update(id, data)
-      // .then((res) => {
-      //   setPatient((prevPatients) =>
-      //     prevPatients.map((p) => (p.id === id ? res.data : p)),
-      //   );
-      // })
-      .catch((err) => setErreur(err.message));
+  const navigate = useNavigate();
+
+  const handleModifier = (patientSelectionne) => {
+    setPatientById(patientSelectionne);
+
+    navigate("/update", { state: { patient: patientSelectionne } });
   };
 
   return (
     <>
+      <button onClick={}>+</button>
       <table>
         <thead>
           <tr>
@@ -113,7 +112,7 @@ export default function Patients() {
               <td>
                 <button onClick={() => getClientById(p.id)}>View</button>
                 <button onClick={() => deletePatient(p.id)}>Supprimer</button>
-                <button onClick={() => setPatientById(p)}>Modifier</button>
+                <button onClick={() => handleModifier(p)}>Modifier</button>
               </td>
             </tr>
           ))}
@@ -165,10 +164,6 @@ export default function Patients() {
 
         <button type="submit">Enregistrer</button>
       </form>
-      <ModifierPatientForm
-        patientById={patientById}
-        ModifierPatient={ModifierPatient}
-      />
     </>
   );
 }
