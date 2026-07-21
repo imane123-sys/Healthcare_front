@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import TableauBord from "./components/TableauBord";
 import Patients from "./components/Patients";
 import ModifierPatientForm from "./components/ModifierPatient";
+import AjoutPatient from "./components/AjoutPatient";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/tableauboard" element={<TableauBord />} />
         <Route path="/update" element={<ModifierPatientForm />} />
         <Route path="/patients" element={<Patients />} />
+        <Route path="/ajouterFormulaire" element={<AjoutPatient />} />
       </Routes>
     </>
   );
