@@ -1,41 +1,37 @@
 /* HealthCare+ Landing Page Styles */
 
 .page-wrapper {
-  width: 1280px;
-  padding-left: 256px;
+  width: 100%;
+  min-height: 100vh;
   position: relative;
-  background: linear-gradient(0deg, #FAF8FF 0%, #FAF8FF 100%), white;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: inline-flex;
+  background: linear-gradient(0deg, #faf8ff 0%, #faf8ff 100%), white;
+  display: block;
 }
 
 .page-body {
-  align-self: stretch;
-  height: 1860px;
-  min-height: 800px;
+  width: 100%;
+  min-height: 100vh;
   position: relative;
 }
 
 .content-container {
-  width: 1024px;
-  height: 1684px;
-  left: 0;
-  top: 79px;
-  position: absolute;
-  overflow: hidden;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* ---------- Mission section ---------- */
 
 .mission-section {
-  width: 1024px;
+  width: 100%;
   padding: 48px 24px;
-  left: 0;
-  top: 592px;
-  position: absolute;
-  background: #F3F3FE;
+  position: relative;
+  background: #f3f3fe;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -65,9 +61,9 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  color: #191B23;
+  color: #191b23;
   font-size: 24px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 32px;
   word-wrap: break-word;
@@ -76,7 +72,7 @@
 .mission-divider {
   width: 96px;
   height: 4px;
-  background: #004AC6;
+  background: #004ac6;
   border-radius: 9999px;
 }
 
@@ -96,7 +92,7 @@
   flex-direction: column;
   color: #434655;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 24px;
   word-wrap: break-word;
@@ -105,12 +101,10 @@
 /* ---------- Hero section ---------- */
 
 .hero-section {
-  width: 1024px;
+  width: 100%;
   padding: 64px 24px;
-  left: 0;
-  top: 0;
-  position: absolute;
-  background: #FAF8FF;
+  position: relative;
+  background: #faf8ff;
   overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
@@ -124,7 +118,7 @@
   left: 649px;
   top: -250px;
   position: absolute;
-  background: rgba(180, 197, 255, 0.20);
+  background: rgba(180, 197, 255, 0.2);
   box-shadow: 100px 100px 100px;
   border-radius: 9999px;
   filter: blur(50px);
@@ -136,7 +130,7 @@
   left: -75px;
   top: 442px;
   position: absolute;
-  background: rgba(211, 228, 254, 0.30);
+  background: rgba(211, 228, 254, 0.3);
   box-shadow: 80px 80px 80px;
   border-radius: 9999px;
   filter: blur(40px);
@@ -148,7 +142,8 @@
   justify-content: center;
   align-items: center;
   gap: 48px;
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Hero left column */
@@ -180,18 +175,18 @@
 }
 
 .hero-heading-line1 {
-  color: #191B23;
+  color: #191b23;
   font-size: 48px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 60px;
   word-wrap: break-word;
 }
 
 .hero-heading-line2 {
-  color: #004AC6;
+  color: #004ac6;
   font-size: 48px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 60px;
   word-wrap: break-word;
@@ -213,7 +208,7 @@
   flex-direction: column;
   color: #434655;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 26px;
   word-wrap: break-word;
@@ -231,7 +226,7 @@
 .hero-cta-button {
   padding: 16px 32px;
   position: relative;
-  background: #004AC6;
+  background: #004ac6;
   border-radius: 16px;
   justify-content: flex-start;
   align-items: center;
@@ -248,7 +243,9 @@
   top: 0;
   position: absolute;
   background: rgba(255, 255, 255, 0);
-  box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10);
+  box-shadow:
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 }
 
@@ -266,7 +263,7 @@
   flex-direction: column;
   color: white;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 28px;
   word-wrap: break-word;
@@ -292,7 +289,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
+  min-width: min(100%, 360px);
 }
 
 .hero-image-card {
@@ -310,7 +308,8 @@
 
 .hero-image {
   align-self: stretch;
-  height: 464px;
+  height: auto;
+  aspect-ratio: 1;
   position: relative;
   width: 100%;
   object-fit: cover;
@@ -321,9 +320,9 @@
   left: 266.91px;
   top: 366px;
   position: absolute;
-  background: rgba(255, 255, 255, 0.70);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
-  outline: 1px rgba(226, 232, 240, 0.80) solid;
+  outline: 1px rgba(226, 232, 240, 0.8) solid;
   outline-offset: -1px;
   backdrop-filter: blur(5px);
   justify-content: flex-start;
@@ -339,13 +338,15 @@
   top: 0;
   position: absolute;
   background: rgba(255, 255, 255, 0);
-  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10);
+  box-shadow:
+    0px 8px 10px -6px rgba(0, 0, 0, 0.1),
+    0px 20px 25px -5px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 }
 
 .hero-stat-icon-wrap {
   padding: 8px 8px 14px 8px;
-  background: #DCFCE7;
+  background: #dcfce7;
   border-radius: 9999px;
   flex-direction: column;
   justify-content: flex-start;
@@ -380,7 +381,7 @@
   flex-direction: column;
   color: #434655;
   font-size: 11px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 12px;
   word-wrap: break-word;
@@ -398,9 +399,9 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  color: #191B23;
+  color: #191b23;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 28px;
   word-wrap: break-word;
@@ -409,14 +410,12 @@
 /* ---------- Modules section ---------- */
 
 .modules-list {
-  width: 976px;
-  left: 24px;
-  top: 876px;
-  position: absolute;
+  width: 100%;
+  position: relative;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
   gap: 24px;
 }
 
@@ -426,12 +425,12 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  outline: 1px #C3C6D7 solid;
+  outline: 1px #c3c6d7 solid;
   outline-offset: -1px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
 }
 
 .module-card--white {
@@ -439,7 +438,7 @@
 }
 
 .module-card--tinted {
-  background: #E7E7F3;
+  background: #e7e7f3;
   padding: 24px;
 }
 
@@ -458,7 +457,7 @@
 .module-card-watermark-icon {
   width: 160px;
   height: 160px;
-  background: #191B23;
+  background: #191b23;
 }
 
 .module-card-header {
@@ -481,7 +480,7 @@
 .module-icon-wrap {
   width: 48px;
   height: 48px;
-  background: rgba(37, 99, 235, 0.10);
+  background: rgba(37, 99, 235, 0.1);
   border-radius: 12px;
   justify-content: center;
   align-items: center;
@@ -491,7 +490,7 @@
 .module-icon-wrap--dark {
   width: 40px;
   height: 40px;
-  background: #38485D;
+  background: #38485d;
   border-radius: 8px;
   justify-content: center;
   align-items: center;
@@ -501,7 +500,7 @@
 .module-icon-wrap--orange {
   width: 40px;
   height: 40px;
-  background: rgba(188, 72, 0, 0.10);
+  background: rgba(188, 72, 0, 0.1);
   border-radius: 8px;
   justify-content: center;
   align-items: center;
@@ -518,7 +517,7 @@
 .module-icon-blue {
   width: 21.33px;
   height: 21.33px;
-  background: #004AC6;
+  background: #004ac6;
 }
 
 .module-icon-white {
@@ -554,9 +553,9 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  color: #191B23;
+  color: #191b23;
   font-size: 24px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 32px;
   word-wrap: break-word;
@@ -566,21 +565,42 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  color: #191B23;
+  color: #191b23;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 28px;
   word-wrap: break-word;
 }
 
 .module-desc-wrap {
-  width: 320px;
-  max-width: 320px;
+  width: 100%;
+  max-width: 560px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
+}
+
+@media (max-width: 900px) {
+  .hero-section,
+  .mission-section {
+    padding: 32px 20px;
+  }
+
+  .hero-flex {
+    gap: 24px;
+  }
+
+  .hero-heading-line1,
+  .hero-heading-line2 {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .module-card {
+    padding: 24px;
+  }
 }
 
 .module-desc {
@@ -589,7 +609,7 @@
   flex-direction: column;
   color: #434655;
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 20px;
   word-wrap: break-word;
@@ -624,9 +644,9 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  color: #004AC6;
+  color: #004ac6;
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.24px;
@@ -647,5 +667,5 @@
 .module-link-icon {
   width: 7.4px;
   height: 12px;
-  background: #004AC6;
+  background: #004ac6;
 }

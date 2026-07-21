@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/Acceuil.css";
 
 export default function Acceuil() {
@@ -37,7 +38,7 @@ export default function Acceuil() {
                 </div>
 
                 <div className="hero-cta-wrap">
-                  <button className="hero-cta-button">
+                  <Link className="hero-cta-button" to="/dashboard">
                     <div className="hero-cta-shadow" />
                     <div className="hero-cta-label-wrap">
                       <div className="hero-cta-label">
@@ -47,7 +48,7 @@ export default function Acceuil() {
                     <div className="hero-cta-icon-wrap">
                       <div className="hero-cta-icon" />
                     </div>
-                  </button>
+                  </Link>
                 </div>
               </div>
 

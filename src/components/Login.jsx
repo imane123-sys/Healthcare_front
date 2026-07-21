@@ -22,7 +22,7 @@ const Login = () => {
 
       loginUser(data);
 
-      navigate("/tableauboard");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Identifiants incorrects");
     } finally {
