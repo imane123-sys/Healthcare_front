@@ -41,7 +41,7 @@ export default function Patients() {
   const navigate = useNavigate();
 
   const handleModifier = (patientSelectionne) => {
-    setPatientById(patientSelectionne);
+    // setPatientById(patientSelectionne);
 
     navigate("/update", { state: { patient: patientSelectionne } });
   };
