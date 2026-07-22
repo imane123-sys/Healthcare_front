@@ -1,3 +1,4 @@
+import { jwtDecode } from "jwt-decode";
 import React, { createContext, useState, useEffect, useContext } from "react";
 
 const AuthContext = createContext(null);
@@ -17,40 +18,40 @@ export const AuthProvider = ({ children }) => {
     }
     setLoading(false);
   }, []);
+  const loginUser = (tokenString) => {
+    const decodedToken = jwtDecode(tokenString);
 
-  const loginUser = (authData) => {
-    localStorage.setItem("hc_token", authData.token);
+    const userEmail = decodedToken.sub;
+    const userRoles = decodedToken.roles || [];
+
+    localStorage.setItem("hc_token", tokenString);
+
     localStorage.setItem(
       "hc_user",
       JSON.stringify({
-        email: authData.email,
-        name: authData.name,
-        role: authData.role,
+        email: userEmail,
+        roles: userRoles,
       }),
     );
-
-    setToken(authData.token);
+    setToken(tokenString);
     setUser({
-      email: authData.email,
-      name: authData.name,
-      role: authData.role,
-    });
+      email: userEmail,
+      roles: userRoles,
+    })
+  }
+    const logoutUser = () => {
+      localStorage.removeItem("hc_token");
+      localStorage.removeItem("hc_user");
+      setToken(null);
+      setUser(null);
+    };
+
+    return (
+      <AuthContext.Provider
+        value={{ user, token, loginUser, logoutUser, loading }}
+      >
+        {!loading && children}
+      </AuthContext.Provider>
+    );
   };
-
-  const logoutUser = () => {
-    localStorage.removeItem("hc_token");
-    localStorage.removeItem("hc_user");
-    setToken(null);
-    setUser(null);
-  };
-
-  return (
-    <AuthContext.Provider
-      value={{ user, token, loginUser, logoutUser, loading }}
-    >
-      {!loading && children}
-    </AuthContext.Provider>
-  );
-};
-
 export const useAuth = () => useContext(AuthContext);
